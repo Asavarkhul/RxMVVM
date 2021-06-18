@@ -28,13 +28,23 @@ struct HomeViewModel {
     // MARK: - Transform
 
     func transform(inputs: Inputs) -> Outputs {
-        
-        
-        
-        
+        let initTitle = inputs
+            .startTrigger
+            .map { "..." }
+
+        let buttonTitle = inputs
+            .startTrigger
+            .map { "Press Me" }
+
+        let newTitle = inputs
+            .didPressButton
+            .map { "New Value" }
+
+        let title = Observable.merge(initTitle, newTitle)
+
         return .init(
-            title: .just("Toto"),
-            buttonTitle: .never()
+            title: title,
+            buttonTitle: buttonTitle
         )
     }
 }

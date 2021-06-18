@@ -23,7 +23,7 @@ final class OrderDetailsViewModelTests: XCTestCase {
         didPressButton = PublishSubject<Void>()
     }
 
-    func test() {
+    func testThatItReturnsTitle() {
         let expectation = self.expectation(description: "Returned Title")
         let viewModel = HomeViewModel()
         let inputs = makeMockInputs()
@@ -33,12 +33,52 @@ final class OrderDetailsViewModelTests: XCTestCase {
             .title
             .asDriver(onErrorJustReturn: "Error")
             .drive(onNext: { text in
-                XCTAssertEqual(text, "Toto")
+                XCTAssertEqual(text, "...")
                 expectation.fulfill()
             })
             .disposed(by: disposeBag)
 
         startTrigger.onNext(())
+
+        waitForExpectations(timeout: 1.0, handler: nil)
+    }
+
+    func testThatItReturnsButtonTitle() {
+        let expectation = self.expectation(description: "Returned Title")
+        let viewModel = HomeViewModel()
+        let inputs = makeMockInputs()
+        let outputs = viewModel.transform(inputs: inputs)
+
+        outputs
+            .buttonTitle
+            .asDriver(onErrorJustReturn: "Error")
+            .drive(onNext: { text in
+                XCTAssertEqual(text, "Press Me")
+                expectation.fulfill()
+            })
+            .disposed(by: disposeBag)
+
+        startTrigger.onNext(())
+
+        waitForExpectations(timeout: 1.0, handler: nil)
+    }
+
+    func testThatItDidPressButtonReturnsNewTitle() {
+        let expectation = self.expectation(description: "Returned Title")
+        let viewModel = HomeViewModel()
+        let inputs = makeMockInputs()
+        let outputs = viewModel.transform(inputs: inputs)
+
+        outputs
+            .title
+            .asDriver(onErrorJustReturn: "Error")
+            .drive(onNext: { text in
+                XCTAssertEqual(text, "New Value")
+                expectation.fulfill()
+            })
+            .disposed(by: disposeBag)
+
+        didPressButton.onNext(())
 
         waitForExpectations(timeout: 1.0, handler: nil)
     }

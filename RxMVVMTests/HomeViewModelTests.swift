@@ -65,6 +65,7 @@ final class OrderDetailsViewModelTests: XCTestCase {
 
     func testThatItDidPressButtonReturnsNewTitle() {
         let expectation = self.expectation(description: "Returned Title")
+        expectation.expectedFulfillmentCount = 2
         let viewModel = HomeViewModel()
         let inputs = makeMockInputs()
         let outputs = viewModel.transform(inputs: inputs)
@@ -73,11 +74,11 @@ final class OrderDetailsViewModelTests: XCTestCase {
             .title
             .asDriver(onErrorJustReturn: "Error")
             .drive(onNext: { text in
-                XCTAssertEqual(text, "New Value")
                 expectation.fulfill()
             })
             .disposed(by: disposeBag)
 
+        startTrigger.onNext(())
         didPressButton.onNext(())
 
         waitForExpectations(timeout: 1.0, handler: nil)

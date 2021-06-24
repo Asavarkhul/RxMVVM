@@ -24,6 +24,7 @@
 		2FEB3D10267CE58D00C219A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FEB3D0F267CE58D00C219A3 /* AppDelegate.swift */; };
 		2FEB3D19267CE58D00C219A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FEB3D18267CE58D00C219A3 /* Assets.xcassets */; };
 		2FEB3D1C267CE58D00C219A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FEB3D1A267CE58D00C219A3 /* LaunchScreen.storyboard */; };
+		2FFAEAE2268473A90009E59E /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 2FFAEAE1268473A90009E59E /* Readme.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		2FEB3D1D267CE58D00C219A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2FEB3D22267CE58E00C219A3 /* RxMVVMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxMVVMTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FEB3D28267CE58E00C219A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2FFAEAE1268473A90009E59E /* Readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +155,7 @@
 		2FEB3D03267CE58C00C219A3 = {
 			isa = PBXGroup;
 			children = (
+				2FFAEAE1268473A90009E59E /* Readme.md */,
 				2FEB3D0E267CE58D00C219A3 /* RxMVVM */,
 				2FEB3D25267CE58E00C219A3 /* RxMVVMTests */,
 				2FEB3D0D267CE58D00C219A3 /* Products */,
@@ -284,6 +287,7 @@
 			files = (
 				2FEB3D1C267CE58D00C219A3 /* LaunchScreen.storyboard in Resources */,
 				2FEB3D19267CE58D00C219A3 /* Assets.xcassets in Resources */,
+				2FFAEAE2268473A90009E59E /* Readme.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites name='RxMVVMTests.xctest' tests='3' failures='0'>
+  <testsuite name='RxMVVMTests.OrderDetailsViewModelTests' tests='3' failures='0'>
+    <testcase classname='RxMVVMTests.OrderDetailsViewModelTests' name='testThatItDidPressButtonReturnsNewTitle' time='0.003'/>
+    <testcase classname='RxMVVMTests.OrderDetailsViewModelTests' name='testThatItReturnsButtonTitle' time='0.001'/>
+    <testcase classname='RxMVVMTests.OrderDetailsViewModelTests' name='testThatItReturnsTitle' time='0.001'/>
+  </testsuite>
+</testsuites>

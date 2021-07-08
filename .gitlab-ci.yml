@@ -1,0 +1,18 @@
+stages:
+    - unit_tests
+    
+variables:
+  LC_ALL: "en_US.UTF-8"
+  LANG: "en_US.UTF-8"
+
+before_script:
+  - gem install bundler
+  - bundle install
+    
+unit_tests:
+    dependencies: []
+    stage: unit_tests
+    script:
+        - bundle exec fastlane tests
+    tags:
+        - ios
